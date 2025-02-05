@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>ce site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container, .video-container {
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        .title {
+            color: #ff00ff; /* Fuchsia */
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        img, video {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #000;
+        }
+    </style>
 </head>
 <body>
-    <h1>Alex Groza</h1>
-    <p>ceci est un site je crois ...</p>
+    <h1>Bienvenue sur mon site !</h1>
+
+    <div class="content">
+        <!-- Section Image -->
+        <div class="image-container">
+            <p class="title">imageeee</p>
+            <img src="image.jpg" alt="Une belle image">
+        </div>
+
+        <!-- Section Vidéo -->
+        <div class="video-container">
+            <p class="title">videoooooo</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPlOB6dAa64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
 </body>
 </html>
