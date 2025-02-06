@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Navigation</title>
+    <title>Curriculum Vitae</title>
     <style>
+        /* Réinitialisation des styles */
         * {
             margin: 0;
             padding: 0;
@@ -25,22 +26,22 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
         }
 
-        .sidebar button {
-            width: 100%;
+        .sidebar a {
+            display: block;
             padding: 15px;
             margin: 10px 0;
             background: #444;
             color: white;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
             font-size: 16px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        .sidebar button:hover {
+        .sidebar a:hover {
             background: #666;
         }
 
@@ -50,39 +51,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
-            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 28px;
             color: #333;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Sections cachées par défaut */
+        .section {
+            display: none;
+        }
+
+        /* Section active affichée */
+        .section:target {
+            display: block;
+        }
+
+        /* Style par défaut si aucune section n'est sélectionnée */
+        #default:target ~ #default {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <!-- Barre latérale avec les boutons -->
+    <!-- Barre latérale avec liens -->
     <div class="sidebar">
-        <button onclick="showContent('cv1')">Curriculum Vitae 1</button>
-        <button onclick="showContent('cv2')">Curriculum Vitae 2</button>
-        <button onclick="showContent('cv3')">Curriculum Vitae 3</button>
+        <a href="#cv1">Curriculum Vitae 1</a>
+        <a href="#cv2">Curriculum Vitae 2</a>
+        <a href="#cv3">Curriculum Vitae 3</a>
     </div>
 
     <!-- Contenu principal -->
-    <div class="content" id="content">
-        Sélectionne un onglet à gauche
-    </div>
+    <div class="content">
+        <div id="default" class="section">
+            <h1>Bienvenue</h1>
+            <p>Sélectionne un CV à gauche.</p>
+        </div>
 
-    <script>
-        function showContent(id) {
-            let content = document.getElementById("content");
-            
-            if (id === "cv1") {
-                content.innerHTML = "Curriculum Vitae 1 - Infos ici...";
-            } else if (id === "cv2") {
-                content.innerHTML = "Curriculum Vitae 2 - Infos ici...";
-            } else if (id === "cv3") {
-                content.innerHTML = "Curriculum Vitae 3 - Infos ici...";
-            }
-        }
-    </script>
+        <div id="cv1" class="section">
+            <h1>Curriculum Vitae 1</h1>
+            <p>Contenu du premier CV...</p>
+        </div>
+
+        <div id="cv2" class="section">
+            <h1>Curriculum Vitae 2</h1>
+            <p>Contenu du deuxième CV...</p>
+        </div>
+
+        <div id="cv3" class="section">
+            <h1>Curriculum Vitae 3</h1>
+            <p>Contenu du troisième CV...</p>
+        </div>
+    </div>
 
 </body>
 </html>
