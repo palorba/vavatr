@@ -3,61 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>CV Navigation</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Barre latérale */
+        .sidebar {
+            width: 250px;
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .sidebar button:hover {
+            background: #666;
+        }
+
+        /* Contenu principal */
+        .content {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .content {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .image-container, .video-container {
-            margin: 20px 0;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        .title {
-            color: #ff00ff; /* Fuchsia */
+            font-size: 24px;
             font-weight: bold;
-            font-size: 1.5em;
-        }
-
-        img, video {
-            max-width: 80%;
-            height: auto;
-            border: 2px solid #000;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur mon site !</h1>
 
-    <div class="content">
-        <!-- Section Image -->
-        <div class="image-container">
-            <p class="title">imageeee</p>
-            <img src="image.jpg" alt="Une belle image">
-        </div>
-
-        <!-- Section Vidéo -->
-        <div class="video-container">
-            <p class="title">videoooooo</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPlOB6dAa64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+    <!-- Barre latérale avec les boutons -->
+    <div class="sidebar">
+        <button onclick="showContent('cv1')">Curriculum Vitae 1</button>
+        <button onclick="showContent('cv2')">Curriculum Vitae 2</button>
+        <button onclick="showContent('cv3')">Curriculum Vitae 3</button>
     </div>
+
+    <!-- Contenu principal -->
+    <div class="content" id="content">
+        Sélectionne un onglet à gauche
+    </div>
+
+    <script>
+        function showContent(id) {
+            let content = document.getElementById("content");
+            
+            if (id === "cv1") {
+                content.innerHTML = "Curriculum Vitae 1 - Infos ici...";
+            } else if (id === "cv2") {
+                content.innerHTML = "Curriculum Vitae 2 - Infos ici...";
+            } else if (id === "cv3") {
+                content.innerHTML = "Curriculum Vitae 3 - Infos ici...";
+            }
+        }
+    </script>
 
 </body>
 </html>
